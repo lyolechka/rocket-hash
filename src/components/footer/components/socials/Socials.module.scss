@@ -1,0 +1,40 @@
+@import './src/styles/variables';
+@import './src/styles/mixins';
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  margin: 0 0.4rem;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: $color-gray-02;
+  border-radius: $border-radius;
+}
+
+.svg {
+  fill: $body-font-color;
+}
+
+@include respond(tablet) {
+  .link {
+    transition: 0.3s;
+
+    &:hover {
+      background: $color-black;
+      transition: 0.3s;
+
+      .svg {
+        fill: $brand-secondary-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "./src/styles/variables";
+
+.lang {
+  display: flex;
+}
+
+.wrap {
+  & + .wrap {
+    margin: 0 0 0 1.2rem;
+  }
+}
+
+.label {
+  padding: 0.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: $color-gray-03;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $color-gray-01;
+    color: $body-font-color;
+  }
+}
+
+.input {
+  &[type="radio"] {
+    display: none;
+  }
+
+  &:checked + .label {
+    background: $color-gray-01;
+    color: $body-font-color;
+  }
+}

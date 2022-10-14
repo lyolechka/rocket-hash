@@ -1,0 +1,87 @@
+@use "./src/styles/mixins";
+@import "./src/styles/variables";
+
+.search {
+    height: 4.4rem;
+    position: relative;
+    z-index: 3;
+}
+
+.wrap {
+    padding: 0 0 0 0.8rem;
+    display: flex;
+    align-items: center;
+    background: $color-gray-04;
+    position: absolute;
+    right: 5.6rem;
+    z-index: 99;
+    height: 100%;
+
+    @include mixins.respond(desktop) {
+        position: relative;
+        height: initial;
+        right: initial;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 2.6rem;
+        height: 7.9rem;
+        left: -2.5rem;
+        top: 0;
+        background-image: url('../../../../images/svg/bg.svg');
+    }
+}
+
+.input {
+    box-sizing: border-box;
+    width: 3.4rem;
+    height: 4.4rem;
+    color: $color-gray-03;
+    padding: 0.8rem 2.8rem 0.8rem 0.8rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+
+    &::placeholder {
+        color: $color-gray-03;
+    }
+
+    &:focus {
+        background: $color-black;
+        width: 20rem;
+        border-color: $border-color;
+        cursor: auto;
+
+        & ~ .button {
+            z-index: 1;
+        }
+    }
+
+    @include mixins.respond(desktop) {
+        &:hover {
+            & ~ .button {
+                svg {
+                    fill: $brand-secondary-color;
+                }
+            }
+        }
+    }
+}
+
+.button {
+    width: 1.6rem;
+    height: 1.6rem;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: -1;
+}
+

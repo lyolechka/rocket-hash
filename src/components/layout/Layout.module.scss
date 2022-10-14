@@ -1,0 +1,18 @@
+@use "./src/styles/mixins";
+@import "./src/styles/variables";
+
+.layout {
+  max-width: 172.8rem;
+
+  @include mixins.respond(desktop) {
+    display: grid;
+    grid-template-areas:
+            'first second'
+            'third second';
+    //grid-template-rows: repeat(auto-fit, minmax(1px, 100%));
+    grid-auto-flow: dense;
+    column-gap: 2.4rem;
+    padding: 0 0 0 2.4rem;
+    margin: 0 auto;
+  }
+}

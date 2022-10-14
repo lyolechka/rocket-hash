@@ -1,0 +1,13 @@
+@use "./src/styles/mixins";
+
+.logo {
+  margin: 0 2.4rem 0 0;
+  align-self: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 3;
+
+  @include mixins.respond(tablet) {
+    margin: 0 6.8rem 0 0;
+  }
+}

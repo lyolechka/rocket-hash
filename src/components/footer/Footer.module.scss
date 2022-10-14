@@ -1,0 +1,31 @@
+@use "./src/styles/mixins";
+@import "./src/styles/variables";
+
+.footer {
+  background: $color-gray;
+  padding: 2.4rem 0;
+}
+
+.wrapper {
+  padding: 0 2.4rem;
+
+
+  @include mixins.respond(tablet) {
+    max-width: 172.8rem;
+    display: flex;
+    justify-content: space-between;
+
+    .copyright {
+      margin: 0;
+    }
+  }
+
+    @include mixins.respond(wide-desktop) {
+        margin: 0 auto;
+    }
+}
+
+.copyright {
+  text-align: center;
+  margin: 0 0 3.2rem;
+}

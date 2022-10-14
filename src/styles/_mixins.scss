@@ -1,0 +1,29 @@
+@mixin respond ($breakpoint) {
+  @if $breakpoint==tablet {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktop {
+    @media screen and (min-width: 1280px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==wide-desktop {
+    @media screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+@mixin text-ellipsis ($height, $lines) {
+  display: block;
+  overflow: hidden;
+  max-height: $height;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}

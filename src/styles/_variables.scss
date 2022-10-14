@@ -1,0 +1,70 @@
+:root {
+  --brand-primary-color: #FFC715;
+  --brand-primary-color-02: #F6A623;
+  --brand-secondary-color: #2F80ED;
+  --border-color: #3E3D3D;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #1A1919;
+  --color-gray-01: #222222;
+  --color-gray-02: #292929;
+  --color-gray-03: #5A5A5A;
+  --color-gray-04: #201F1F;
+  --color-gray-05: #555555;
+  --color-gray-06: #353535;
+
+  --body-font-color: #CDCDCD;
+}
+
+// COLORS
+$brand-primary-color: var(--brand-primary-color);
+$brand-primary-color-02: var(--brand-primary-color-02);
+$brand-secondary-color: var(--brand-secondary-color);
+$border-color: var(--border-color);
+$color-black: var(--color-black);
+$color-white: var(--color-white);
+$color-gray: var(--color-gray);
+$color-gray-01: var(--color-gray-01);
+$color-gray-02: var(--color-gray-02);
+$color-gray-03: var(--color-gray-03);
+$color-gray-04: var(--color-gray-04);
+$color-gray-05: var(--color-gray-05);
+$color-gray-06: var(--color-gray-06);
+$body-font-color: var(--body-font-color);
+
+// FONTS
+$font-name-base: 'Open Sans';
+$font-family-base: $font-name-base, Arial, sans-serif;
+
+// FONT WEIGHTS
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// FONT SIZES
+$html-font-size: 62.5%; // 1rem = 10px
+$body-font-size: 1.6rem; // 16px
+
+// FONTS
+$text-body-font: $font-weight-regular 1.4rem / 2rem $font-family-base;
+$text-secondary-font: $font-weight-regular 1.6rem / 2rem $font-family-base;
+$text-third-font: $font-weight-regular 1.2rem / 1.2 $font-family-base;
+$title-font: $font-weight-regular 2.4rem / 3.2rem $font-family-base;
+$menu-items-font: $font-weight-regular 1.6rem / 2rem $font-family-base;
+$statistic-value-font-mobile: $font-weight-regular 3.2rem / 2.4rem $font-family-base;
+$statistic-value-font-tablet: $font-weight-regular 2.4rem / 1 $font-family-base;
+$statistic-value-font-desktop: $statistic-value-font-mobile;
+
+// BORDERS
+$border: 0.1rem solid $border-color;
+
+// BORDER RADIUS
+$border-radius: 0.6rem;
+$border-radius-01: 50%;
+
+// GRADIENT
+$primary-gradient: linear-gradient(180deg, $brand-primary-color 0%, $brand-primary-color-02 100%);
+$secondary-gradient: linear-gradient(90deg, #56CCF2 0%, #BB6BD9 100%);
+$third-gradient: linear-gradient(180deg, $color-gray-03 0%, $color-gray-03 100%);
+$fourth-gradient: linear-gradient(270deg, #222222 18.75%, #4b4b4b 47.92%, #222222 72.92%);

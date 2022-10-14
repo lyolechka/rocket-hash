@@ -1,0 +1,137 @@
+@use "./src/styles/mixins";
+@import "../../styles/variables";
+
+.statistics {
+  margin: 0 0 4rem;
+  padding: 0 1.6rem;
+  min-width: 36rem;
+
+  @include mixins.respond(desktop) {
+    grid-column: 1 / 2;
+    grid-row-start: 2 ;
+    padding: 0;
+  }
+}
+
+.title {
+  margin: 0 0 2.4rem;
+  font: $title-font;
+  color: $body-font-color;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+
+  @include mixins.respond(tablet) {
+    column-gap: 1.6rem;
+    flex-direction: row;
+  }
+
+  @include mixins.respond(wide-desktop) {
+    column-gap: 2.4rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+
+  @include mixins.respond(tablet) {
+    column-gap: 1.6rem;
+    flex-flow: row wrap;
+    flex-grow: 1;
+  }
+
+  @include mixins.respond(wide-desktop) {
+    column-gap: 2.4rem;
+  }
+}
+
+.infoBlock {
+  min-height: 28rem;
+  padding: 1.6rem;
+  background: $color-gray-01;
+
+  @include mixins.respond(tablet) {
+    width: 32.2%;
+    min-height: auto;
+    flex-shrink: 0;
+  }
+
+  @include mixins.respond(wide-desktop) {
+    min-height: 28rem;
+  }
+}
+
+.item {
+  padding: 1.6rem;
+  height: 12.5rem;
+  background: $color-gray-01;
+  overflow: hidden;
+
+  @include mixins.respond(tablet) {
+    height: 10.5rem;
+    flex: 25% 1 0;
+  }
+
+  @include mixins.respond(wide-desktop) {
+    height: 12.5rem;
+  }
+}
+
+.criterion {
+  margin: 0 0 1.6rem;
+  color: $color-gray-03;
+  font: $text-body-font;
+}
+
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font: $statistic-value-font-mobile;
+
+  @include mixins.respond(tablet) {
+    font: $statistic-value-font-tablet;
+  }
+
+  @include mixins.respond(desktop) {
+    font: $statistic-value-font-desktop;
+  }
+}
+
+.loader {
+  position: relative;
+
+  .criterion {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+    left: 50%;
+    top: 50%;
+    margin: -2rem 0 0 -2rem;
+    position: absolute;
+    border: 0.4rem solid $body-font-color;
+    border-radius: $border-radius-01;
+    border-top: 0.4rem solid $color-gray-06;
+    width: 4rem;
+    height: 4rem;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+

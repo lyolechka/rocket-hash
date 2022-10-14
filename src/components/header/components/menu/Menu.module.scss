@@ -1,0 +1,101 @@
+@use "./src/styles/mixins";
+@import "./src/styles/variables";
+
+.menu {
+  @include mixins.respond(desktop) {
+    &:hover {
+      .navigation {
+        right: 0;
+      }
+    }
+  }
+}
+
+.wrap {
+  padding: 0 2.4rem 0 1.6rem;
+  display: flex;
+  align-items: center;
+  background: $color-gray-04;
+}
+
+.navigation {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  right: -200vw;
+  transition: right 0.4s ease;
+
+  @include mixins.respond(desktop) {
+    top: 0;
+    padding: 8rem 0 0;
+    z-index: 2;
+  }
+}
+
+.open {
+  right: 0;
+}
+
+.container {
+  background: $color-gray-01;
+  padding: 2.4rem;
+  height: calc(100vh - 8rem);
+
+  @include mixins.respond(tablet) {
+    height: auto;
+  }
+
+  @include mixins.respond(desktop) {
+    padding: 3.2rem 6.4rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+  height: 100%;
+
+  @include mixins.respond(tablet) {
+    flex-direction: column;
+    height: 50rem;
+  }
+
+  @include mixins.respond(desktop) {
+    height: 33.6rem;
+  }
+}
+
+.item {
+  width: 50%;
+
+  @include mixins.respond(tablet) {
+    width: 20%;
+  }
+  @include mixins.respond(desktop) {
+    width: 10%;
+    padding: 0.8rem;
+  }
+}
+
+.link {
+  color: $color-gray-03;
+  font: $menu-items-font;
+  position: relative;
+
+  @include mixins.respond(desktop) {
+    &::before {
+      padding: 0 0.4rem 0 0;
+    }
+
+    &:hover {
+      padding: 0 0 0 0.4rem;
+
+      &::before {
+        content: '-';
+      }
+
+      color: $brand-secondary-color;
+    }
+  }
+}
